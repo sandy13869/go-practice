@@ -15,7 +15,7 @@ func main() {
 	// fmt.Printf("ConferenceTickets is %T, remainingTickets is %T, conferenceName is %T. \n", conferenceTickets, remainingTickets, conferenceName)
 
 	fmt.Printf("Welcome to %v booking application \n", conferenceName)
-	fmt.Printf("We have total tickets of %v & Available are %v \n", conferenceTickets, remainingTickets)
+	fmt.Printf("We have total tickets of %v & Available tickets %v \n", conferenceTickets, remainingTickets)
 	fmt.Println("Get your tickets here to attend")
 
 	var firstName string

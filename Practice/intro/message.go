@@ -1,20 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
+	learner := "Sandy"
+	age := 30
+	fmt.Printf("Welcome to Practice Area %v @ %v ..!\n", learner, age)
 
-	messagesFromDoris := []string{
-		"Message 1",
-		"Message 2",
-		"Message 3",
-		"Message 4",
+	type names []string
+	friends := names{"sam", "sha"}
+	fmt.Printf("My bae is %v \n", friends[1])
+
+	nums := make([]int, 3)
+	fmt.Println(nums)
+
+	numbers := []int{1, 32, 3}
+	for index, value := range numbers {
+		fmt.Printf("Index : %v and value : %v \n", index, value)
 	}
-
-	numMessages := float64(len(messagesFromDoris))
-	costPerMessage := .02
-
-	totalCost := costPerMessage * numMessages
-
-	fmt.Printf("Total messages sent by Doris %.f & Bill %.2f \n", numMessages, totalCost)
 }

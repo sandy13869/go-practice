@@ -1,16 +1,17 @@
 package models
 
 import (
+	"go-bookstore/pkg/config"
+
 	"github.com/jinzhu/gorm"
-	"github.com/sandy13869/go-practice/tree/main/Projects/go-bookstore/pkg/config"
 )
 
 var db *gorm.DB
 
 type Book struct {
 	gorm.Model
-	Name        string `gorm:""json:"name"`
-	Author      string `json:"suthor"`
+	Name        string `json:"name"`
+	Author      string `json:"author"`
 	Publication string `json:"publication"`
 }
 
@@ -38,8 +39,16 @@ func GetBookById(Id int64) (*Book, *gorm.DB) {
 	return &getBook, db
 }
 
-func DeleteBook(Id int64) Book {
-	var book Book
-	db.Where("ID=?", Id).Delete(book)
-	return book
+func DeleteBook(Id int64) error {
+	// func DeleteBook(Id int64) Book {
+	// var book Book
+	// db.Where("ID=?", Id).Delete(&book)
+	// return book
+
+	// Perform hard delete by unscoped delete
+	if err := db.Unscoped().Delete(&Book{}, "ID = ?", Id).Error; err != nil {
+		return err
+	}
+
+	return nil
 }

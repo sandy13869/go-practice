@@ -4,9 +4,10 @@ import (
 	"log"
 	"net/http"
 
+	"go-bookstore/pkg/routes"
+
 	"github.com/gorilla/mux"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"github.com/sandy13869/go-practice/tree/main/Projects/go-bookstore/pkg/routes"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module github.com/sandy13869/go-practice/tree/main/Projects/go-bookstore
+module go-bookstore
 
 go 1.20
 
